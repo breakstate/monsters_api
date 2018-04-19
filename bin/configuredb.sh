@@ -1,4 +1,11 @@
 #!/bin/bash
+/***************************************/
+########################################
+# ./bin/configuredb.sh                 #
+#                                      #
+# Used to init or reinit db            #
+# called in npm run configure          #
+########################################
 
 database="monstersdb"
 

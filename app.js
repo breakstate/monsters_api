@@ -1,3 +1,9 @@
+/***************************************/
+/* ./app.js                            */
+/*                                     */
+/* Entry point for our application     */
+/***************************************/
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -26,7 +32,7 @@ app.get('/monsters/:id', (request, response, next) => {
 // Middleware
 app.use(bodyParser.json());
 
-app.use('/monsters', monsters);
+app.use('/monsters', monsters); // route
 
 app.use((err, req, res, next) => {
 	res.json(err);
@@ -34,4 +40,4 @@ app.use((err, req, res, next) => {
 
 //const port = 3000; // moved to /bin/www
 //app.listen(port, () => console.log(`listening on port ${port}`));
-module.exports = app;
+module.exports = app; // not sure why exportedt

@@ -1,3 +1,10 @@
+/***************************************/
+/* ./routes/monster.js                 */
+/*                                     */
+/* Middleware for /monsters route      */
+/* Used in ./app.js                    */
+/***************************************/
+
 const { Router } = require('express');
 const router = Router(); //mini express app (?), allows for other http requests
 

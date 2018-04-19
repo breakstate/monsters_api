@@ -1,3 +1,10 @@
+/**************************************/
+/* ./bin/sql/monsters.sql             */
+/*                                    */
+/* Used by ./bin/configuredb.sh       */
+/* to init and populate monsters table*/
+/**************************************/
+
 CREATE TABLE monsters(
 	id serial,
 	name character varying(50),

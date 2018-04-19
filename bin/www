@@ -1,4 +1,11 @@
 #!/usr/bin/env node
+/***************************************/
+/* ./bin/www                           */
+/*                                     */
+/* Initializes web server              */
+/* port: 3000                          */
+/* Used in start and dev npm script    */
+/***************************************/
 
 const app = require('../app');
 

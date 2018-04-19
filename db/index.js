@@ -1,6 +1,16 @@
+/***************************************/
+/*                                     */
+/* ./db/index.js                       */
+/*                                     */
+/* Establishes connection to db        */
+/* using creds from db_configuration.js*/
+/*                                     */
+/***************************************/
+
 const { Pool } = require('pg');//es6 destruction syntax
 
-const { user, host, database, password, port } = require('../secrets/db_configuration.js');
+const { user, host, database, password, port } = require(
+	'../secrets/db_configuration.js');
 
 
 
