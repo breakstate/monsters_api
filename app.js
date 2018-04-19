@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
-const pool = require('./db');
+const monsters = require('./routes/monsters');
+
+/*const pool = require('./db');                            // moved to /routes/monsters.js 
 
 app.get('/monsters', (request, response, next) => {
 	pool.query('SELECT * FROM monsters ORDER BY id ASC', (err, res) => {
@@ -18,9 +20,11 @@ app.get('/monsters/:id', (request, response, next) => {
 	
 		response.json(res.rows);
 	}); // array is 1 indexed (starts at 1))
-});
+});*/
 
 // Middleware
+app.use('/monsters', monsters);
+
 app.use((err, req, res, next) => {
 	res.json(err);
 });
