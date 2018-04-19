@@ -20,6 +20,20 @@ router.get('/:id', (request, response, next) => {
 	});
 });
 
+router.post('/', (request, response, next) => {
+	const { name, personality } = request.body;
+	pool.query(
+		'INSERT INTO monsters(name, personality) VALUES($1, $2)', 
+		[name, personality],
+		(err, res) => {
+			if (err) return next(err); //if (err) = if error is present
+
+			response.redirect('/monsters');
+		}
+	);
+});
+
+
 module.exports = router;//exported within context of our application
 
 //router is middleware

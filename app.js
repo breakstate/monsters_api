@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const monsters = require('./routes/monsters');
 
@@ -23,6 +24,8 @@ app.get('/monsters/:id', (request, response, next) => {
 });*/
 
 // Middleware
+app.use(bodyParser.json());
+
 app.use('/monsters', monsters);
 
 app.use((err, req, res, next) => {
