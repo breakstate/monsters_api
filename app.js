@@ -40,4 +40,4 @@ app.use((err, req, res, next) => {
 
 //const port = 3000; // moved to /bin/www
 //app.listen(port, () => console.log(`listening on port ${port}`));
-module.exports = app; // not sure why exportedt
+module.exports = app; // not sure why exported
