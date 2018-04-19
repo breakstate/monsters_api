@@ -42,7 +42,7 @@ router.post('/', (request, response, next) => {
 
 router.put('/:id', (request, response, next) => {
 	const { id } = request.params;
-	const { name, personality } = request.body;
+	const { name, personality } = request.body; // can remove due to updating logic
 
 	const keys = ['name', 'personality']; // start of updating logic
 	const fields = [];
@@ -62,6 +62,16 @@ router.put('/:id', (request, response, next) => {
 		);
 	}); // end of updating logic
 });
+
+router.delete('/:id', (request, response, next) => {
+	const { id } = request.params;
+	
+	pool.query('DELETE FROM monsters WHERE id=($1)', [id], (err, res) => {
+		if (err) return next(err);
+
+		response.redirect('/monsters');
+	});
+})
 
 module.exports = router;//exported within context of our application
 
