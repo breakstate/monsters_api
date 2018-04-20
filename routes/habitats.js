@@ -10,8 +10,8 @@ router.get('/', (request, response, next) => {
 		response.json(res.rows);
 	});
 });
-/*
-router.get('/:id', request, response, next) => {
+
+router.get('/:id', (request, response, next) => {
 	const { id } = request.params;
 	pool.query('SELECT * FROM habitats WHERE id=$1', [id], (err, res) => {
 		if (err) return next(err);
@@ -20,7 +20,7 @@ router.get('/:id', request, response, next) => {
 	});
 });
 
-router.post() => {};
-*/
+//router.post() => {};
+
 module.exports = router;
 
