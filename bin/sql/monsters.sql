@@ -13,8 +13,8 @@ CREATE TABLE monsters(
 
 CREATE TABLE habitats(
 	id serial,
-	name character varying(5),
-	climate character varying(5),
+	name character varying(50),
+	climate character varying(50),
 	temperature int
 );
 

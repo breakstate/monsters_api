@@ -8,6 +8,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const monsters = require('./routes/monsters');
+const habitats = require('./routes/habitats');
 
 /*const pool = require('./db');                            // moved to /routes/monsters.js 
 
@@ -33,6 +34,7 @@ app.get('/monsters/:id', (request, response, next) => {
 app.use(bodyParser.json());
 
 app.use('/monsters', monsters); // route
+app.use('/habitats', habitats);
 
 app.use((err, req, res, next) => {
 	res.json(err);
