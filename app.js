@@ -7,11 +7,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const routes = require('./routes');
+const verifyToken = require('./auth/VerifyToken');
+
+/*	//moved to /routes/index/js
 const monsters = require('./routes/monsters');
 const habitats = require('./routes/habitats');
 const lives = require('./routes/lives');
+*/
 
-/*const pool = require('./db');                            // moved to /routes/monsters.js 
+
+/*const pool = require('./db');    // moved to /routes/monsters.js 
 
 app.get('/monsters', (request, response, next) => {
 	pool.query('SELECT * FROM monsters ORDER BY id ASC', (err, res) => {
@@ -34,9 +40,18 @@ app.get('/monsters/:id', (request, response, next) => {
 // Middleware
 app.use(bodyParser.json());
 
+// JWT auth middleware
+app.use('*', verifyToken);
+
+/* //moved to /routes/monsters
 app.use('/monsters', monsters); // route
 app.use('/habitats', habitats);
 app.use('/lives', lives);
+*/
+
+
+app.use('/', routes);
+
 
 app.use((err, req, res, next) => {
 	res.json(err);

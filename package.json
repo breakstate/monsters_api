@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"configure": "bin/configuredb.sh",
-	"start": "node bin/www",
-	"dev": "nodemon bin/www"
+    "configure": "bin/configuredb.sh",
+    "start": "node bin/www",
+    "dev": "nodemon bin/www"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.1",
     "pg": "^7.4.1"
   }
 }
